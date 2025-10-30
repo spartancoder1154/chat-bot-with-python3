@@ -1,0 +1,85 @@
+def ground_shipping_cost(weight):  
+    flat_charge = 20.00  
+    if weight <= 2:  
+        price_per_pound = 1.50  
+    elif weight <= 6:  
+        price_per_pound = 3.00  
+    elif weight <= 10:  
+        price_per_pound = 4.00  
+    else:  
+        price_per_pound = 4.75  
+    return flat_charge + (price_per_pound * weight)  
+
+def drone_shipping_cost(weight):  
+    flat_charge = 0.00  
+    if weight <= 2:  
+        price_per_pound = 4.50  
+    elif weight <= 6:  
+        price_per_pound = 9.00  
+    elif weight <= 10:  
+        price_per_pound = 12.00  
+    else:  
+        price_per_pound = 14.25  
+    return flat_charge + (price_per_pound * weight)  
+
+def cheapest_shipping_method(weight):  
+    ground = ground_shipping_cost(weight)  
+    premium = 125.00  
+    drone = drone_shipping_cost(weight)  
+
+    if ground < premium and ground < drone:  
+        method = "Ground Shipping"  
+        cost = ground  
+    elif premium < ground and premium < drone:  
+        method = "Ground Shipping Premium"  
+        cost = premium  
+    else:  
+        method = "Drone Shipping"  
+        cost = drone  
+
+    print("The cheapest option is " + method + " which costs $", cost)  
+
+cheapest_shipping_method(4.8)  
+cheapest_shipping_method(41.5)  
+
+def ground_shipping_cost(weight):  
+    flat_charge = 20.00  
+    # Ground Shipping  
+    if weight <= 2:  
+        price_per_pound = 1.50  
+    elif weight <= 6:  
+        price_per_pound = 3.00  
+    elif weight <= 10:  
+        price_per_pound = 4.00  
+    else:  
+        price_per_pound = 4.75  
+    return flat_charge + (price_per_pound * weight)  
+
+def drone_shipping_cost(weight):  
+    flat_charge = 0.00  
+    if weight <= 2:  
+        price_per_pound = 4.50  
+    elif weight <= 6:  
+        price_per_pound = 9.00  
+    elif weight <= 10:  
+        price_per_pound = 12.00  
+    else:  
+        price_per_pound = 14.25  
+    return flat_charge + (price_per_pound * weight)  
+
+def cheapest_shipping_method(weight):  
+    ground = ground_shipping_cost(weight)  
+    premium = 125.00  
+    drone = drone_shipping_cost(weight)  
+
+    if ground < premium and ground < drone:  
+        method = "Ground Shipping"  
+        cost = ground  
+    elif premium < ground and premium < drone:  
+        method = "Ground Shipping Premium"  
+        cost = premium  
+    else:  
+        method = "Drone Shipping"  
+        cost = drone  
+
+    print("The cheapest option is " + method + " which costs $", cost)  
